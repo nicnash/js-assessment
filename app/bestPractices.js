@@ -29,7 +29,6 @@ define(function() {
     },
 
     parseInt : function(num) {
-
       return parseInt(num,10);
     },
 

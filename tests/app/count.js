@@ -46,8 +46,8 @@ define([
 
     it('should provide a method to cancel the counting', function (done) {
       this.timeout(600);
-
       var counter = answers.count(1, 5);
+      
       counter.cancel();
 
       setTimeout(function () {

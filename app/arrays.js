@@ -59,14 +59,6 @@ define(function() {
     insert : function(arr, item, index) {
       arr.splice(index, 0, item);
       return arr;
-      //Addressing edge cases: for this function if index is lower than 0 it prepends, greater than the length it appends
-      // if (index<=0) {
-      //   return prepend(arr,item)
-      // } else if(index >= arr.length) {
-      //   return append(arr,item);
-      // } else {
-      //   return [...arr.slice(0,index), item, ...arr.slice(index)]
-      // }
     },
 
     count : function(arr, item) {
