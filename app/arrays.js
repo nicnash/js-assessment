@@ -116,6 +116,6 @@ define(function() {
       })
 
       return occurences;
-    }
+    },
   };
 });
