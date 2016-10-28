@@ -2,60 +2,40 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 
 define(function() {
   return {
-    argsAsArray : function(fn,[greeting,name,punctuation]) {
-        return fn(greeting,name,punctuation);
+    argsAsArray : function(fn,args) {  //could do destructuring if wanted each individual argument
+        return fn(...args);
     },
 
     speak : function(fn, obj) {
-        obj.speak = fn;
-        return obj.speak();
+        return fn.call(obj)
     },
 
     functionFunction : function(str) {
-        // console.log(str + ", ");
-        // console.log(return functionFunction(str));
+        return (str2)=>`${str}, ${str2}`;
     },
 
     makeClosures : function(arr, fn) {
-        let funcs = []
-        for (var i = 0; i < arr.length; i++) {
-            let temp = arr[i];
-            funcs.push(
-                function() {
-                    x = temp;
-                    return fn(temp);
-                });
-        }
-        return funcs;
+        return arr.map((item)=>()=>fn(item));
     },
 
     partial : function(fn, str1, str2) {
-        return (function(punc){
-                    greeting = str1;
-                    name = str2;
-                    return fn(greeting,name,punc);
-                });
+        return (punc) => fn(str1,str2,punc);
     },
 
     useArguments : function() {
-
+        return [...arguments].reduce((pre,cur) => {return pre+cur},0);
     },
 
-    callIt : function(fn) {
-
+    callIt : function(fn,...args) {
+        return fn(...args);
     },
 
-    partialUsingArguments : function(fn) {
-
+    partialUsingArguments : function(fn,...args) {
+        return (...args2) => fn(...args, ...args2);
     },
 
     curryIt : function(fn) {
-
+        return (a)=>(b)=>(c)=> fn(a,b,c);
     }
   };
 });
-
-
-
-
-['hi','hello']
