@@ -54,7 +54,8 @@ define([
   });
 
   describe('permutation', function() {
-    var arr = [ 1, 2, 3, 4 ];
+
+    var arr = [ 1, 2, 3, 4];
     var answer = [
       [1, 2, 3, 4],
       [1, 2, 4, 3],
