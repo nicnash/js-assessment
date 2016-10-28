@@ -22,8 +22,8 @@ define(function() {
         return (punc) => fn(str1,str2,punc);
     },
 
-    useArguments : function() {
-        return [...arguments].reduce((pre,cur) => {return pre+cur},0);
+    useArguments : function(...args) {
+        return args.reduce((pre,cur) => {return pre+cur},0);
     },
 
     callIt : function(fn,...args) {

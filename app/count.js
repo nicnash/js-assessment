@@ -30,7 +30,7 @@ define(function () {
         let response = iterator.next();
         console.log(response.value);
         if(response.value == end) {
-	 	 	cancel();
+	 	 	    cancel();
         }
    }
 
